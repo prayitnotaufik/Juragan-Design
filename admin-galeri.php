@@ -44,13 +44,13 @@
                                         <?php
                                         switch ($row['kategori']) {
                                             case 1:
-                                                echo "Dekorasi Pelaminan";
+                                                echo "Vector Art";
                                                 break;
                                             case 2:
-                                                echo "Gaun Pengantin";
+                                                echo "Bitmap";
                                                 break;
                                             case 3:
-                                                echo "Prosesi";
+                                                echo "Branding";
                                             break;
                                         }
                                         ?>
@@ -97,9 +97,9 @@
                                         <div class="form-group">
                                         <label for="selectkategori">Kategori</label>
                                         <select class="form-control" name="kategori" id="selectkategori">
-                                            <option value="1">Dekorasi Pelaminan</option>
-                                            <option value="2">Gaun Pengantin</option>
-                                            <option value="3">Prosesi</option>
+                                            <option value="1">Vector Art</option>
+                                            <option value="2">Bitmap</option>
+                                            <option value="3">Branding</option>
                                         </select>
                                         </div>
                                         <div>

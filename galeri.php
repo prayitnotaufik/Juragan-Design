@@ -16,11 +16,11 @@
 <body>
 <style>
     body {
-    height: 100vh;
+    height: 145vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url("img/bgbg.png");
+    background: url("img/bgnew.jpg");
     background-size: cover;
     }
 </style>
@@ -28,18 +28,18 @@
     <section class="gallery-block grid-gallery">
         <div class="container">
             <div class="heading pt-5">
-                <h1 class="text-center" style="margin-bottom:-30px">Gallery Cintya Wedding Organizer</h1>
+                <h1 class="text-center" style="margin-bottom:-30px">Gallery Juragan Design  </h1>
             </div>
             <div>
             <ul class="nav nav-pills justify-content-center mb-5" id="pills-tab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active bg-purple" id="pills-dekor-tab" data-toggle="pill" href="#pills-dekor" role="tab" aria-controls="pills-dekor" aria-selected="true">Dekorasi Pelaminan</a>
+                <a class="nav-link active bg-purple" id="pills-dekor-tab" data-toggle="pill" href="#pills-dekor" role="tab" aria-controls="pills-dekor" aria-selected="true">Vector Art</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-gaun-tab" data-toggle="pill" href="#pills-gaun" role="tab" aria-controls="pills-gaun" aria-selected="false">Gaun Pengantin</a>
+                <a class="nav-link" id="pills-gaun-tab" data-toggle="pill" href="#pills-gaun" role="tab" aria-controls="pills-gaun" aria-selected="false">Bitmap</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-prosesi-tab" data-toggle="pill" href="#pills-prosesi" role="tab" aria-controls="pills-prosesi" aria-selected="false">Prosesi</a>
+                <a class="nav-link" id="pills-prosesi-tab" data-toggle="pill" href="#pills-prosesi" role="tab" aria-controls="pills-prosesi" aria-selected="false">Branding</a>
             </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">

@@ -2,7 +2,7 @@
 $dbUrl = "localhost";
 $dbUser = "root";
 $dbPass = "";
-$dbName = "wedding";
+$dbName = "ebisnis";
 
 $con = mysqli_connect($dbUrl, $dbUser, $dbPass, $dbName);
 if (!$con) {

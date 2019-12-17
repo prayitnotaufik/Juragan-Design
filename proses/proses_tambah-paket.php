@@ -4,12 +4,8 @@
     
     $nama = $_POST["nama"];
     $harga = $_POST["harga"];
-    $dekorasi = $_POST["dekorasi"];
-    $rias_baju = $_POST["rias_baju"];
-    $dokumentasi = $_POST["dokumentasi"];
-    $mc = $_POST["mc"];
-    $free = $_POST["free"];
-    $biaya = $_POST["biaya"];
+    $lama = $_POST["lama"];
+    $detail = $_POST["detail"];
     $code = $_FILES['file']['error'];
     if ($code === 0) {     
 
@@ -39,8 +35,8 @@
         }
 
         if(move_uploaded_file($tmp, $path)) {
-            $sql = "INSERT INTO paket (nama_paket,harga,dekorasi,rias_baju,dokumentasi,mc,free,foto,biaya_pelihara) 
-            VALUES ('$nama', '$harga', '$dekorasi', '$rias_baju','$dokumentasi','$mc','$free','$nama_file','$biaya')";
+            $sql = "INSERT INTO paket (nama_paket,harga,foto,lama,Detail) 
+            VALUES ('$nama', '$harga', '$nama_file', '$lama', '$detail')";
 
             if (mysqli_query($con, $sql)) {
                 header("Location:../admin-paket.php");

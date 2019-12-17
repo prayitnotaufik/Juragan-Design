@@ -1,3 +1,4 @@
+<?php include 'config/connection.php' ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,11 +20,11 @@
 <body>
 <style>
     body {
-    height: 100vh;
+    height: 145vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url("img/bgbg.png");
+    background: url("img/bgnew.jpg");
     background-size: cover;
     }
 </style>
@@ -34,12 +35,12 @@
             <div class="row">
             <div class="col-6 pr-5">
                 <div class="column">
-                    <h3 style="color:purple">Tentang Cintya Wedding Organizer</h3>
-                    <p>Cintya wedding organizer merupakan salah satu upaya dalam membantu menyiapkan pesta pernikahan yang yang memakai web sebagai media promosi. Disini kami menyediakan berbagai paket pernikahan dengan harga terjangkau dan pelayanan yang bagus.</p>
+                    <h3 style="color:purple">Tentang Juragan Design</h3>
+                    <p>Juragan Design merupakan Startup yang didirikan oleh sekelompok pemuda iseng guna memenuhi nilai mata kuliah Elektronik Bisnis, tetapi besar harapan kami agar bisnis ini benar benar berjalan sesuai dengan rencana</p>
                     <br>
                     <h3 style="color:purple">Kontak Kami</h3>
                     <p>
-                    <i class="far fa-envelope"></i> Cintyawedding@gmail.com
+                    <i class="far fa-envelope"></i> juragandesign@gmail.com
                     </p>
                     <p>
                     <i class="fas fa-phone"></i> (0334)889345
@@ -51,15 +52,11 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active"><img src="img/gal1.png"></div>
-                        <div class="carousel-item"><img src="img/gal2.png"></div>
-                        <div class="carousel-item"><img src="img/gal3.png"></div>
-                        <div class="carousel-item"><img src="img/gal5.png"></div>
-                        <div class="carousel-item"><img src="img/gal4.png"></div>
+                        <div class="carousel-item active"><img src="img/slide1.png"></div>
+                        <div class="carousel-item"><img src="img/slide2.png"></div>
+                        <div class="carousel-item"><img src="img/slide3.png"></div>
                     <!-- </div> -->
                     </div>
     <!-- ------- caraosel ----- -->
@@ -68,10 +65,9 @@
             </div>
             <div class="col-6 pl-5">
                 <h3 style="color:purple">Alamat</h3>
-                    <p>Jl. Kapt. Kyai Ilyas 31A Lumajang</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.6962962683892!2d113.21658041428591!3d-8.132369494145893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6678a585d5db3%3A0x4598dffeffb08eb4!2sJl.%20Kapten%20Kyai%20Ilyas%2C%20Kec.%20Lumajang%2C%20Kabupaten%20Lumajang%2C%20Jawa%20Timur%2067316!5e0!3m2!1sid!2sid!4v1572189969157!5m2!1sid!2sid"
+                    <p>Perumahan Bumi Mangliawan Kavling 6, Pakis, Kab.Malang</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31611.688508736464!2d112.62784003992041!3d-7.9512130302071675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd629079a424b11%3A0x6529d429ad140bbf!2sPerum%20Bumi%20Mangliawan!5e0!3m2!1sen!2sid!4v1576069358985!5m2!1sen!2sid"
                     height="580" width="550" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-
                 </div> 
             </div>
             </div>

@@ -4,12 +4,12 @@
 			<div class="row">
 				<div class="col-md-4">
 					<h5 class="column">ADDRESS</h5>
-					<p>Jl. Kapt. Kyai Ilyas 31A</p>
-					<p style="margin-top: -4%;">Tompokersan - Lumajang</p>
+					<p>Perumahan Bumi Mangliawan Kavling 6</p>
+					<p style="margin-top: -4%;">Pakis - Kab.Malang</p>
 				</div>
 				<div class="col-md-4 center">
 					<h5 class="column">CONTACT INFO</h5>
-					<p><i class="far fa-envelope"></i> Cintyawedding@gmail.com</p>
+					<p><i class="far fa-envelope"></i> juragandesign@gmail.com</p>
 					<p style="margin-top: -4%;"><i class="fas fa-phone"></i> (0334)889364</p>
 				</div>
 				<div class="col-md-4 center">

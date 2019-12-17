@@ -43,45 +43,19 @@ $row = mysqli_fetch_assoc($result);
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="my-input">Dekorasi</label>
-                                <input id="my-input" class="form-control" type="text" name="dekorasi" value="<?php echo $row["dekorasi"] ?>">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="my-input">Rias & Baju</label>
-                                <input id="my-input" class="form-control" type="text" name="rias_baju" value="<?php echo $row["rias_baju"] ?>">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="my-input">Dokumentasi</label>
-                                <input id="my-input" class="form-control" type="text" name="dokumentasi" value="<?php echo $row["dokumentasi"] ?>">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="my-input">MC</label>
-                                <input id="my-input" class="form-control" type="text" name="mc" value="<?php echo $row["mc"] ?>">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="my-input">Free</label>
-                                <input id="my-input" class="form-control" type="text" name="free" value="<?php echo $row["free"] ?>">
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <label for="my-input">Biaya Peliharaan</label>
-                                <input id="my-input" class="form-control" type="number" name="biaya" >
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="form-group">
                                 <label for="my-input">Foto</label>
                                 <input type="file" name="file" for="file" class="form-control" required>
                             </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="my-input">Lama Pengerjaan (Hari)</label>
+                                <input id="my-input" class="form-control" type="number" name="lama" value="<?php echo $row["lama"] ?>" required>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <label for="catatan">Detail</label>
+                            <textarea rows="5" class="form-control" type="text" value="" id="detail" placeholder="Masukkan Catatan" name="detail"><?php echo $row["Detail"] ?></textarea>
                         </div>
                     </div>
                     <div class="row">

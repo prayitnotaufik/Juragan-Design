@@ -14,11 +14,11 @@
 <body>
 <style>
     body {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url("img/bg1.jpg");
+    background: url("img/bglog.jpg");
     background-size: cover;
     }
 </style>
@@ -57,7 +57,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="col-md-8" style="margin-right:-500px"><img class="img-fluid" src="img/bglogin.png"></div>
+                <!-- <div class="col-md-8" style="margin-right:-500px"><img class="img-fluid" src="img/bglogin.png"></div> -->
             </div>
         </div>
     </section>

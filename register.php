@@ -12,11 +12,11 @@
 <body>
 <style>
     body {
-    height: 100vh;
+    height: 145vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url("img/bg1.jpg");
+    background: url("img/bgreg.jpg");
     background-size: cover;
     }
 </style>

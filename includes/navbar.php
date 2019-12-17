@@ -10,10 +10,11 @@ $sql = "SELECT * FROM user WHERE type = '$type' ";
 $hasil = mysqli_query($con, $sql);
 $item = mysqli_fetch_assoc($hasil);
 ?>
+
 <!--- Navigation -->
 <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="index.php" style="margin-left:20px"><img src="img/lgcintya.png" width="100" height="50"></a>
+		<a class="navbar-brand" href="index.php" style="margin-left:20px"><img src="img/Logo.png" width="150"></a>
 		<button class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
@@ -31,6 +32,12 @@ $item = mysqli_fetch_assoc($hasil);
 						</li>
 						<li class="nav-item" style="margin-right:20px">
 							<a class="nav-link" href="galeri.php">Galeri</a>
+						</li>
+						<li class="nav-item" style="margin-right:20px">
+							<a class="nav-link" href="paket.php">Desain</a>
+						</li>
+						<li class="nav-item" style="margin-right:20px">
+							<a class="nav-link" href="status2.php">Pemesanan</a>
 						</li>
 						<li class="nav-item" style="margin-right:20px">
 							<a class="nav-link" href="admin-paket.php">Admin</a>
@@ -52,7 +59,7 @@ $item = mysqli_fetch_assoc($hasil);
 							<a class="nav-link" href="galeri.php">Galeri</a>
 						</li>
 						<li class="nav-item" style="margin-right:20px">
-							<a class="nav-link" href="paket.php">Paket</a>
+							<a class="nav-link" href="paket.php">Desain</a>
 						</li>
 						<li class="nav-item" style="margin-right:20px">
 							<a class="nav-link" href="status2.php">Pemesanan</a>
@@ -75,7 +82,7 @@ $item = mysqli_fetch_assoc($hasil);
 						<a class="nav-link" href="galeri.php">Galeri</a>
 					</li>
 					<li class="nav-item" style="margin-right:20px">
-						<a class="nav-link" href="paket.php">Paket</a>
+						<a class="nav-link" href="paket.php">Desain</a>
 					</li>
 					<li class="nav-item" style="margin-right:20px">
 						<a class="nav-link" id="register" href="register.php">Register</a>

@@ -17,11 +17,11 @@
 <body>
     <style>
         body {
-            height: 100vh;
+            height: 145vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: url("img/bgbg.png");
+            background: url("img/bgnew.jpg");
             background-size: cover;
         }
 
@@ -89,13 +89,13 @@
         }
     </style>
     <?php include 'includes/navbar.php' ?>
-
     <?php
 
     $query = "SELECT * FROM pemesanan";
     $result = mysqli_query($con, $query);
 
     ?>
+    
     <section class="gallery-block grid-gallery">
         <div class="container">
             <h1 class="text-center" style="margin-top:30px; margin-bottom:30px">What our customers are saying</h1>

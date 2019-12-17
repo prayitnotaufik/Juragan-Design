@@ -22,9 +22,10 @@
                     <thead class="table-dark">
                         <tr>
                             <th>#</th>
+                            <th>Pemesan</th>
                             <th>Tanggal Pesan</th>
-                            <th>Tanggal Kembali</th>
-                            <th>Lokasi</th>
+                            <th>Tanggal Jadi</th>
+                            <th>Jenis</th>
                             <th>Catatan</th>
                             <th>Harga</th>
                             <th>Bukti Pembayaran</th>
@@ -37,26 +38,34 @@
                         $query = "SELECT * FROM pemesanan";
                         $result = mysqli_query($con, $query);
 
-                        $query2 = "SELECT * FROM paket INNER JOIN pemesanan ON (paket.id_paket=pemesanan.id_paket)";
-                        $result2 = mysqli_query($con, $query2);
-                        $paket = mysqli_fetch_assoc($result2);
                         if (mysqli_num_rows($result) > 0) {
                             $no = 0;
                             while ($row = mysqli_fetch_assoc($result)) {
+                                $id_paket = $row["id_paket"];
+                                $query2 = "SELECT * FROM paket WHERE id_paket = '$id_paket'";
+                                $result2 = mysqli_query($con, $query2);
+                                $paket = mysqli_fetch_assoc($result2);
+
+                                $id_user = $row["user_id"];
+                                $query3 = "SELECT * FROM user WHERE id_user = '$id_user'";
+                                $result3 = mysqli_query($con, $query3);
+                                $paket2 = mysqli_fetch_assoc($result3);
+
                                 $no++;
                                 $tanggal1 = strtotime($row["tgl_pesan"]);
                                 $tanggal2 = strtotime($row["tgl_kembali"]);
                                 $dif = $tanggal2 - $tanggal1;
                                 $hasil = round($dif / 86400);
-                                $jumlah = $paket["harga"] + ($hasil * $paket["biaya_pelihara"]);
+                                // $jumlah = $paket["harga"] + ($hasil * $paket["biaya_pelihara"]);
                                 ?>
                                 <tr>
                                     <td><?php echo $no ?></td>
-                                    <td><?php echo date_format(new DateTime($row["tgl_pesan"]),'d-m-Y') ?></td>
-                                    <td><?php echo date_format(new DateTime($row["tgl_kembali"]),'d-m-Y') ?></td>
-                                    <td><?php echo $row["lokasi"] ?></td>
+                                    <td><?php echo $paket2["nama"] ?></td>
+                                    <td><?php echo date_format(new DateTime($row["tgl_pesan"]), 'd-m-Y') ?></td>
+                                    <td><?php echo date('d-m-Y', strtotime($row["tgl_pesan"] . '+ ' . $paket["lama"] . ' days')) ?></td>
+                                    <td><?php echo $row["jenis"] ?></td>
                                     <td><?php echo $row["catatan"] ?></td>
-                                    <td><?php echo $jumlah ?></td>
+                                    <td>Rp.<?php echo $paket["harga"] ?>,-</td>
                                     <td>
                                         <?php
                                                 if ($row["bukti_pembayaran"] == null) { ?>

@@ -6,7 +6,7 @@ include('../config/connection.php');
 $id = $_GET["id"];
 
 
-$query =  "DELETE FROM `paket` WHERE `paket`.`id_paket` = '$id'";
+$query =  "UPDATE paket SET level = 2 WHERE id_paket = '$id'";
 
 
 if (mysqli_query($con, $query)) {

@@ -109,6 +109,14 @@ foot {
   background-color: #d257ff !important;
 }
 
+.bg-orange{
+  background-color: #ef7e2f !important;
+}
+
+.bg-orange1{
+  background-color: #ee975a !important;
+}
+
 a.bg-ungu:hover, a.bg-ungu:focus,
 button.bg-ungu:hover,
 button.bg-ungu:focus {
@@ -123,6 +131,12 @@ button.bg-ungu:focus {
   color: #fff;
   background-color: #9b59b6;
   border-color: #9b59b6;
+}
+
+.btn-orange {
+  color: #fff;
+  background-color: #ee975a;
+  border-color: #ee975a;
 }
 
 .btn-ungu:hover {

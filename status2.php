@@ -22,8 +22,8 @@
                     <tr>
                         <th>#</th>
                         <th>Tanggal Pesan</th>
-                        <th>Tanggal Kembali</th>
-                        <th>Lokasi</th>
+                        <th>Tanggal Jadi</th>
+                        <th>Jenis</th>
                         <th>Catatan</th>
                         <th>Harga</th>
                         <th>Bukti Pembayaran</th>
@@ -41,25 +41,30 @@
                     $result2 = mysqli_query($con, $query2);
                     $paket = mysqli_fetch_assoc($result2);
 
+
+
                     if (mysqli_num_rows($result) > 0) {
                         $no = 0;
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $id_paket = $row["id_paket"];
+                            $query2 = "SELECT * FROM paket WHERE id_paket = '$id_paket'";
+                            $result2 = mysqli_query($con, $query2);
+                            $paket = mysqli_fetch_assoc($result2);
                             $no++;
                             // $tanggal = date_diff($row["tgl_kembali"],$row["tgl_pesan"]);
                             $tanggal1 = strtotime($row["tgl_pesan"]);
                             $tanggal2 = strtotime($row["tgl_kembali"]);
-                            $dif = $tanggal2 - $tanggal1;
+                            $dif = $tanggal2 + $paket["lama"];
                             $hasil = round($dif / 86400);
-                            $jumlah = $paket["harga"] + ($hasil * $paket["biaya_pelihara"]);
                             ?>
 
                             <tr>
                                 <td><?php echo $no ?></td>
                                 <td><?php echo date_format(new DateTime($row["tgl_pesan"]), 'd-m-Y')  ?></td>
-                                <td><?php echo date_format(new DateTime($row["tgl_kembali"]), 'd-m-Y') ?></td>
-                                <td><?php echo $row["lokasi"] ?></td>
+                                <td><?php echo date('d-m-Y',strtotime($row["tgl_pesan"]. '+ '.$paket["lama"].' days')) ?></td>
+                                <td><?php echo $row["jenis"] ?></td>
                                 <td><?php echo $row["catatan"] ?></td>
-                                <td>Rp.<?php echo $jumlah ?>,-</td>
+                                <td>Rp.<?php echo $paket["harga"] ?>,-</td>
                                 <td>
                                     <?php
                                             if ($row["bukti_pembayaran"] != null) { ?>
@@ -188,14 +193,14 @@
                                                                         <th>Nama Pemesan</th>
                                                                         <td>
                                                                             <?php
-                                                                                $id2 = $row["user_id"];
-                                                                                $query4 = "SELECT * FROM user WHERE id_user = '$id2'";
-                                                                                $result4 = mysqli_query($con,$query4);
-                                                                                $user = mysqli_fetch_assoc($result4);
+                                                                                    $id2 = $row["user_id"];
+                                                                                    $query4 = "SELECT * FROM user WHERE id_user = '$id2'";
+                                                                                    $result4 = mysqli_query($con, $query4);
+                                                                                    $user = mysqli_fetch_assoc($result4);
 
-                                                                                echo $user["nama"];
+                                                                                    echo $user["nama"];
 
-                                                                            ?>
+                                                                                    ?>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -217,12 +222,12 @@
                                                                         <td><?php echo date_format(new DateTime($row["tgl_pesan"]), 'd-m-Y')  ?></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th scope="row">Tanggal Kembali</th>
-                                                                        <td><?php echo date_format(new DateTime($row["tgl_kembali"]), 'd-m-Y')  ?></td>
+                                                                        <th scope="row">Tanggal Jadi</th>
+                                                                        <td><?php echo date('d-m-Y',strtotime($row["tgl_pesan"]. '+ '.$paket["lama"].' days'))  ?></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th scope="row">Lokasi</th>
-                                                                        <td><?php echo $row["lokasi"] ?></td>
+                                                                        <th scope="row">Jenis</th>
+                                                                        <td><?php echo $row["jenis"] ?></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th scope="row">Catatan</th>
@@ -230,7 +235,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <th scope="row">Harga</th>
-                                                                        <td>Rp.<?php echo $jumlah ?>,-</td>
+                                                                        <td>Rp.<?php echo $paket["harga"] ?>,-</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th scope="row">Bukti Pembayaran</th>

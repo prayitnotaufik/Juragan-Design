@@ -14,7 +14,7 @@
         <!-- Page Content -->
         <div style="background-color:#E3EDEA;" id="page-content-wrapper">
             <div class="container-fluid mt-3">
-                <h1 class="">Data Paket</h1>
+                <h1 class="">Data Desain</h1>
             </div>
             <div class="container">
                 <table class="table table-striped table-bordered" style="background-color: white;">
@@ -29,7 +29,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        $query = "SELECT * FROM paket";
+                        $query = "SELECT * FROM paket WHERE level = 1";
                         $result = mysqli_query($con, $query);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -78,57 +78,35 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <p>Dekorasi</p>
+                                                            <p>lama</p>
                                                         </div>
                                                         <div class="col-md-1">
                                                             <p>:</p>
                                                         </div>
                                                         <div style="" class="col-md-6">
-                                                            <p><?php echo $row["dekorasi"] ?></p>
+                                                            <p><?php echo $row["lama"] ?></p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <p>Rias & Baju</p>
+                                                            <p>Detail</p>
                                                         </div>
                                                         <div class="col-md-1">
                                                             <p>:</p>
                                                         </div>
                                                         <div style="" class="col-md-6">
-                                                            <p><?php echo $row["rias_baju"] ?></p>
+                                                            <p><?php echo $row["Detail"] ?></p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <p>Dokumentasi</p>
+                                                            <p>Foto</p>
                                                         </div>
                                                         <div class="col-md-1">
                                                             <p>:</p>
                                                         </div>
                                                         <div style="" class="col-md-6">
-                                                            <p><?php echo $row["dokumentasi"] ?></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <p>Mc</p>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <p>:</p>
-                                                        </div>
-                                                        <div style="" class="col-md-6">
-                                                            <p><?php echo $row["mc"] ?></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <p>Free</p>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <p>:</p>
-                                                        </div>
-                                                        <div style="" class="col-md-6">
-                                                            <p><?php echo $row["free"] ?></p>
+                                                            <img width="200px" src="foto/<?php echo $row["foto"] ?>" alt="" srcset="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -150,7 +128,7 @@
                 </table>
             </div>
             <div class="container-fluid">
-                <a name="" id="" class="btn btn-dark" href="tambah-paket.php" role="button">Tambah Paket</a>
+                <a name="" id="" class="btn btn-dark" href="tambah-paket.php" role="button">Tambah Desain</a>
             </div>
 
         </div>

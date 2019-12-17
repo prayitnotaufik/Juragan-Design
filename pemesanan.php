@@ -39,57 +39,41 @@ $result2 = mysqli_query($con, $query2);
                     <div class="col">
                         <br>
                         <h3 style="color:purple">Harga : Rp.<?php echo $row["harga"] ?>,-</h3>
-                        <p>Dekorasi : <?php echo $row["dekorasi"] ?></p>
-                        <p>Rias & Baju : <?php echo $row["rias_baju"] ?></p>
-                        <p>Dokumentasi : <?php echo $row["dokumentasi"] ?></p>
-                        <p>MC : <?php echo $row["mc"] ?></p>
-                        <p>Free : <?php echo $row["free"] ?></p>
-                        <p>Biaya Pemeliharaan : Rp.<?php echo $row["biaya_pelihara"] ?>,-/Hari</p>
+                        <p>Lama Pengerjaan : <?php echo $row["lama"] ?> Hari</p>
+                        <p>Detail : <?php echo $row["Detail"] ?></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-5 bg-ungu rounded">
                 <form action="proses/proses_pemesanan.php" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                     <input type="hidden" name="id_user" value="<?php echo $id_user ?>">
                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                    <div>
-                        <h4 class="text-center">Tanggal yang sudah dipesan</h4>
-
-                        <!-- <h6>Tanggal yang sudah dipesan :</h6> -->
-                        <?php
-                        if (mysqli_num_rows($result2) > 0) {
-                            while ($pemesanan = mysqli_fetch_assoc($result2)) { ?>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <label for="tanggal">Tanggal Pesan</label>
-                                        <input class="form-control" type="" value="<?php echo date_format(new DateTime($pemesanan["tgl_pesan"]),'d-m-Y')  ?>" id="tanngal" name="tanggal_pesan" disabled>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <label for="tanggal">Tanggal Selesai</label>
-                                        <input class="form-control" type="" value="<?php echo date_format(new DateTime($pemesanan["tgl_kembali"]),'d-m-Y')  ?>" id="tanngal" name="tanggal_kembali" disabled>
-                                    </div>
-                                </div>
-                            <?php }
-                        }?>
-                    </div>
-                    <hr>
+                    <input type="hidden" name="tanggal" value="<?php echo date('Y-m-d') ?>">
                     <h4 class="text-center">Pesanan Anda</h4>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <label for="tanggal">Tanggal Pesan</label>
-                            <input class="form-control" type="date" value="2011-08-19" id="tanngal" name="tanggal_pesan">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="tanggal">Tanggal Selesai</label>
-                            <input class="form-control" type="date" value="2011-08-19" id="tanngal" name="tanggal_kembali">
+                        <div class="col-sm-12">
+                            <label for="my-input">Gambar Referensi (Jika Ada)</label>
+                            <input type="file" name="file" for="file" class="form-control">
                         </div>
                         <div class="col-sm-12">
-                            <label for="lokasi">Lokasi</label>
-                            <input class="form-control" type="text" value="" id="lokasi" placeholder="Masukkan Lokasi Penyelenggaraan" name="lokasi">
+                        <label for="my-input">Jenis Pesanan</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenis" id="inlineRadio1" value="softfile">
+                                <label class="form-check-label" for="inlineRadio1">Softfile</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenis" id="inlineRadio2" value="hardfile">
+                                <label class="form-check-label" for="inlineRadio2">Hardfile</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jenis" id="inlineRadio3" value="hardfile+pigura">
+                                <label class="form-check-label" for="inlineRadio3">Hardfile(Dengan Pigura 10R)</label>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <label for="catatan">Catatan</label>
-                            <textarea rows="5" class="form-control" type="text" value="" id="lokasi" placeholder="Masukkan Catatan" name="catatan"></textarea>
+                            <textarea rows="12" class="form-control" type="text" value="" id="catatan" placeholder="Masukkan Catatan" name="catatan"></textarea>
                         </div>
                         <div class="col-sm-12">
                             <button type="submit" class="btn btn-block btn-primary">Pesan</button>
